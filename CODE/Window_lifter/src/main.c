@@ -358,13 +358,23 @@ int main(void){
 					t_tBar--;
 				}else{
 					GPIO_PORTB->PCOR |= 1<<15;
-					T_UAUX=0;
+					T_UAUX=8;
 					t_tCount=0;
 					t_tSt=0;
 					t_tBan=0;
 				}
 			}
 		}
+
+		if(T_UAUX==8){
+			if(t_tCount<5000){
+				t_tCount++;
+			}else{
+				T_UAUX=0;
+				t_tCount=0;
+			}
+		}
+
 		LPIT_ADDR->LPIT_MSR |= 0x1u;
 	}
 }

@@ -145,7 +145,7 @@ void BAR_CTRL(T_UBYTE t_uLed){
 }
 
 int main(void){
-	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u,t_tSt=0;
+	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u,t_tSt=0,t_tAPC=0;
 	DISABLE_WDOG();
 	PORT_INIT();
 	SOSC_INIT_8MHZ();
@@ -325,6 +325,39 @@ int main(void){
 					t_tCount=0;
 				}else{
 				GPIO_PORTB->PCOR |= 1<<16;
+					T_UAUX=0;
+					t_tCount=0;
+					t_tSt=0;
+					t_tBan=0;
+				}
+			}
+		}
+
+		if((GPIO_PORTC->PDIR & 1<<5) && (t_tAPC<10)){
+			t_tAPC++;
+		}else{
+			if((GPIO_PORTC->PDIR & 1<<5) && T_UAUX==4){
+				T_UAUX=7;
+				GPIO_PORTB->PCOR |= 1<<16;
+
+			}
+			if((GPIO_PORTC->PDIR & 1<<5) && T_UAUX==6){
+				T_UAUX=7;
+				GPIO_PORTB->PCOR |= 1<<16;
+			}
+		}
+
+		if(T_UAUX==7){
+			if(t_tBar>0 && t_tCount<400){ //400
+				t_tCount++;
+			}else{
+				if(t_tBar>0){
+					GPIO_PORTB->PSOR |= 1<<15;
+					BAR_CTRL(t_tBar);
+					t_tCount=0;
+					t_tBar--;
+				}else{
+					GPIO_PORTB->PCOR |= 1<<15;
 					T_UAUX=0;
 					t_tCount=0;
 					t_tSt=0;

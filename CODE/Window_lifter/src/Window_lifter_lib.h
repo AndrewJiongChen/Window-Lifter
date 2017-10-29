@@ -1,10 +1,8 @@
 /*
  * Window_lifter_lib.h
  *
- *  Created on: 21/10/2017
- *      MAL of Window Lifter Project
+ *  Created on: 24/10/2017
  */
-
 #ifndef WINDOW_LIFTER_LIB_H_
 #define WINDOW_LIFTER_LIB_H_
 
@@ -185,3 +183,4 @@ LPIT *LPIT_ADDR = (LPIT*)LPIT_REG_ADDR;
 /////////////////////////////////////////////////////////////////////////
 
 #endif /* WINDOW_LIFTER_LIB_H_ */
+

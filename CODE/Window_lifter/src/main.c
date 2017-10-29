@@ -145,7 +145,7 @@ void BAR_CTRL(T_UBYTE t_uLed){
 }
 
 int main(void){
-	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u;
+	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u,t_tSt=0;
 	DISABLE_WDOG();
 	PORT_INIT();
 	SOSC_INIT_8MHZ();
@@ -156,15 +156,21 @@ int main(void){
 	for(;;){
 		while(0==(LPIT_ADDR->LPIT_MSR & 0x1u)){}
 		if(T_UAUX==0u){
-			if((GPIO_PORTE->PDIR & (1<<9) && t_tCount<10)){
+			if((GPIO_PORTE->PDIR & (1<<9) && t_tCount<10)){//10
 				t_tCount++;
 				T_UAUX=0;
 			}else{
-				if((GPIO_PORTE->PDIR & (1<<9))){
+				if((GPIO_PORTE->PDIR & (1<<9)) && t_tCount == 10){//10
 					t_tCount=0;
 					T_UAUX=1;
 				}else{
 					T_UAUX=0;
+					if(t_tBan<500 && t_tSt==1){
+						T_UAUX=5;
+					}
+					if(t_tBan<500 && t_tSt==2){
+						T_UAUX=6;
+					}
 				}
 			}
 		}
@@ -179,23 +185,44 @@ int main(void){
 		}
 		if(T_UAUX==2){
 			if((GPIO_PORTE->PDIR & (1<<9))){
-				if(t_tBar>0 && t_tCount<400){
-					t_tCount++;
-				}else{
-					if(t_tBar>0){
-						BAR_CTRL(t_tBar);
-						t_tCount=0;
-						t_tBar--;
+				if(t_tBan<500){
+					t_tBan++;
+					if(t_tBar>0 && t_tCount<400){//400
+						t_tCount++;
 					}else{
-						GPIO_PORTB->PCOR |= 1<<15;
-						T_UAUX=0;
-						t_tCount=0;
+						if(t_tBar>0){
+							BAR_CTRL(t_tBar);
+							t_tCount=0;
+							t_tBar--;
+						}else{
+							GPIO_PORTB->PCOR |= 1<<15;
+							T_UAUX=0;
+							t_tCount=0;
+							t_tBan=0;
+						}
+					}
+					t_tSt=1;
+				}else{
+					t_tSt=0;
+					if(t_tBar>0 && t_tCount<400){
+						t_tCount++;
+					}else{
+						if(t_tBar>0){
+							BAR_CTRL(t_tBar);
+							t_tCount=0;
+							t_tBar--;
+						}else{
+							GPIO_PORTB->PCOR |= 1<<15;
+							T_UAUX=0;
+							t_tCount=0;
+							t_tBan=0;
+						}
 					}
 				}
 			}else{
-
 				GPIO_PORTB->PCOR |= 1<<15;
 				T_UAUX=0;
+				t_tBan=0;
 				t_tCount=0;
 			}
 		}
@@ -226,24 +253,83 @@ int main(void){
 
 		if(T_UAUX==4){
 			if(GPIO_PORTE->PDIR & (1<<0)){
-				if(t_tBar<=9 && t_tCount<400){
+				if(t_tBan<500){
+					t_tBan++;
+					if(t_tBar<=9 && t_tCount<400){
 						t_tCount++;
-				}else{
-					if(t_tBar<=9){
-						t_tBar++;
-						BAR_CTRL(t_tBar);
-						t_tCount=0;
 					}else{
-						GPIO_PORTB->PCOR |= 1<<16;
-						T_UAUX=0;
-						t_tCount=0;
-						//t_tBan=1;
+						if(t_tBar<=9){
+							t_tBar++;
+							BAR_CTRL(t_tBar);
+							t_tCount=0;
+						}else{
+							GPIO_PORTB->PCOR |= 1<<16;
+							T_UAUX=0;
+							t_tCount=0;
+							t_tBan=0;
+						}
+					}
+					t_tSt=2;
+				}else{
+					t_tSt=0;
+					if(t_tBar<=9 && t_tCount<400){
+						t_tCount++;
+					}else{
+						if(t_tBar<=9){
+							t_tBar++;
+							BAR_CTRL(t_tBar);
+							t_tCount=0;
+						}else{
+							GPIO_PORTB->PCOR |= 1<<16;
+							T_UAUX=0;
+							t_tCount=0;
+							t_tBan=0;
+						}
 					}
 				}
 			}else{
 				GPIO_PORTB->PCOR |= 1<<16;
 				T_UAUX=0;
+				t_tBan=0;
 				t_tCount=0;
+			}
+		}
+
+		if(T_UAUX==5){
+			if(t_tBar>0 && t_tCount<400){ //400
+				t_tCount++;
+			}else{
+				if(t_tBar>0){
+					GPIO_PORTB->PSOR |= 1<<15;
+					BAR_CTRL(t_tBar);
+					t_tCount=0;
+					t_tBar--;
+				}else{
+					GPIO_PORTB->PCOR |= 1<<15;
+					T_UAUX=0;
+					t_tCount=0;
+					t_tSt=0;
+					t_tBan=0;
+				}
+			}
+		}
+
+		if(T_UAUX==6){
+			if(t_tBar<=9 && t_tCount<400){
+				t_tCount++;
+			}else{
+				if(t_tBar<=9){
+					GPIO_PORTB->PSOR |= 1<<16;
+					t_tBar++;
+					BAR_CTRL(t_tBar);
+					t_tCount=0;
+				}else{
+				GPIO_PORTB->PCOR |= 1<<16;
+					T_UAUX=0;
+					t_tCount=0;
+					t_tSt=0;
+					t_tBan=0;
+				}
 			}
 		}
 		LPIT_ADDR->LPIT_MSR |= 0x1u;

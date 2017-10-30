@@ -1,7 +1,3 @@
-/*
- * main implementation: use this 'C' sample to create your own application
- *
- */
 #include "Window_lifter_lib.h"
 
 void DISABLE_WDOG(){
@@ -145,7 +141,7 @@ void BAR_CTRL(T_UBYTE t_uLed){
 }
 
 int main(void){
-	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u,t_tSt=0,t_tAPC=0;
+	T_ULONG T_UAUX=0u,t_tCount=0u,t_tBar=10u,t_tBan=0u,t_tSt=0,t_tAPC=0,t_tStop=0;
 	DISABLE_WDOG();
 	PORT_INIT();
 	SOSC_INIT_8MHZ();
@@ -375,6 +371,49 @@ int main(void){
 			}
 		}
 
+		if(T_UAUX==5 && (GPIO_PORTE->PDIR & (1<<0)) && t_tStop<10){
+			t_tStop++;
+		}else{
+			if(T_UAUX==5 && (GPIO_PORTE->PDIR & (1<<0))){
+				GPIO_PORTB->PCOR |= 1<<15;
+				T_UAUX=9;
+				t_tStop=0;
+				t_tCount=0;
+				t_tBan=0;
+				t_tSt=0;
+			}
+		}
+
+		if(T_UAUX==9){
+			if(t_tCount<1000){
+				t_tCount++;
+			}else{
+				T_UAUX=0;
+				t_tCount=0;
+			}
+		}
+
+		if(T_UAUX==6 && (GPIO_PORTE->PDIR & (1<<9)) && t_tStop<10){
+			t_tStop++;
+		}else{
+			if(T_UAUX==6 && (GPIO_PORTE->PDIR & (1<<9))){
+				GPIO_PORTB->PCOR |= 1<<16;
+				T_UAUX=10;
+				t_tStop=0;
+				t_tCount=0;
+				t_tBan=0;
+				t_tSt=0;
+			}
+		}
+
+		if(T_UAUX==10){
+			if(t_tCount<1000){
+				t_tCount++;
+			}else{
+				T_UAUX=0;
+				t_tCount=0;
+			}
+		}
 		LPIT_ADDR->LPIT_MSR |= 0x1u;
 	}
 }

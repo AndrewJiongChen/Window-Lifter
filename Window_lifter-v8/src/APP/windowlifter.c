@@ -1,10 +1,78 @@
-/*
- * windowlifter.c
- *
- *  Created on: 27/10/2017
- *      Author: carlo
+/*============================================================================*/
+/*                        I BS SOFTWARE GROUP                                 */
+/*============================================================================*/
+/*                        OBJECT SPECIFICATION                                */
+/*============================================================================*/
+/*!
+ * $Source: windowlifter.c $
+ * $Revision: version 1 $
+ * $Author: Carlos $
+ * $Date: 28/10/2017 $
  */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    Setting function for Window Lifter
+*/
+/*============================================================================*/
+/* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
+/* AUTOMOTIVE GROUP, Interior Division, Body and Security                     */
+/* ALL RIGHTS RESERVED                                                        */
+/*                                                                            */
+/* The reproduction, transmission, or use of this document or its content is  */
+/* not permitted without express written authority. Offenders will be liable  */
+/* for damages.                                                               */
+/* All rights, including rights created by patent grant or registration of a  */
+/* utility model or design, are reserved.                                     */
+/*                                                                            */
+/*============================================================================*/
+/*============================================================================*/
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*        AUTHOR       |       VERSION      |           DESCRIPTION           */
+/*----------------------------------------------------------------------------*/
+/*        Carlos       |       Version 1    | All functions of window lifter  */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: windowlifter.c  $
+  ============================================================================*/
+
+/* Includes */
+
 #include "APP/windowlifter.h"
+
+/*============================================================================*/
+
+
+
+/* Constants and types  */
+/*============================================================================*/
+
+
+
+/* Variables */
+/*============================================================================*/
+
+
+
+/* Private functions prototypes */
+/*============================================================================*/
+
+
+
+/* Inline functions */
+/*============================================================================*/
+
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+
+/* Exported functions */
 
 void WL_INIT(){
 	enable_PORTB();
@@ -104,3 +172,7 @@ T_ULONG BTN_DOWN(){
 T_ULONG ANTI_PINCH(){
 	return get_PORTC_PIN(AP);
 }
+
+
+/*============================================================================*/
+

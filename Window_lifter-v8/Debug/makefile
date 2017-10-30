@@ -32,37 +32,37 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Window_lifter-v7.elf \
+Window_lifter-v8.elf \
 
 EXECUTABLES_QUOTED += \
-"Window_lifter-v7.elf" \
+"Window_lifter-v8.elf" \
 
 EXECUTABLES_OS_FORMAT += \
-Window_lifter-v7.elf \
+Window_lifter-v8.elf \
 
 SECONDARY_SIZE += \
-Window_lifter-v7.siz \
+Window_lifter-v8.siz \
 
 SECONDARY_SIZE_QUOTED += \
-"Window_lifter-v7.siz" \
+"Window_lifter-v8.siz" \
 
 SECONDARY_SIZE_OS_FORMAT += \
-Window_lifter-v7.siz \
+Window_lifter-v8.siz \
 
 
 # All Target
-all: warning-messages explicit-dependencies Window_lifter-v7.elf secondary-outputs
+all: warning-messages explicit-dependencies Window_lifter-v8.elf secondary-outputs
 
 # Tool invocations
-Window_lifter-v7.elf: $(OBJS) C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Window_lifter-v7/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
+Window_lifter-v8.elf: $(OBJS) C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Window_lifter-v8/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Executing target #15 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
-	arm-none-eabi-gcc -o "Window_lifter-v7.elf" "@Window_lifter-v7.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
+	arm-none-eabi-gcc -o "Window_lifter-v8.elf" "@Window_lifter-v8.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Window_lifter-v7.siz: $(EXECUTABLES)
+Window_lifter-v8.siz: $(EXECUTABLES)
 	@echo 'Executing target #16 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)

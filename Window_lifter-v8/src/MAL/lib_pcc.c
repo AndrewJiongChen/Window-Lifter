@@ -1,14 +1,75 @@
-/*
- * lib_pcc.c
- *
- *  Created on: 26/10/2017
- *      Author: carlo
+/*============================================================================*/
+/*                        I BS SOFTWARE GROUP                                 */
+/*============================================================================*/
+/*                        OBJECT SPECIFICATION                                */
+/*============================================================================*/
+/*!
+ * $Source: lib_pcc.c $
+ * $Revision: version 1 $
+ * $Author: Carlos $
+ * $Date: 29/10/2017 $
  */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    Setting registers of PCC
+*/
+/*============================================================================*/
+/* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
+/* AUTOMOTIVE GROUP, Interior Division, Body and Security                     */
+/* ALL RIGHTS RESERVED                                                        */
+/*                                                                            */
+/* The reproduction, transmission, or use of this document or its content is  */
+/* not permitted without express written authority. Offenders will be liable  */
+/* for damages.                                                               */
+/* All rights, including rights created by patent grant or registration of a  */
+/* utility model or design, are reserved.                                     */
+/*                                                                            */
+/*============================================================================*/
+/*============================================================================*/
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*        AUTHOR       |       VERSION      |           DESCRIPTION           */
+/*----------------------------------------------------------------------------*/
+/*        Carlos       |       Version 1    |   Library of PCC registers      */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+  ============================================================================*/
 
-#ifndef MAL_LIB_PCC_C_
-#define MAL_LIB_PCC_C_
-
+/* Includes */
+/*============================================================================*/
 #include "MAL/lib_pcc.h"
+
+
+/* Constants and types  */
+/*============================================================================*/
+
+
+
+/* Variables */
+/*============================================================================*/
+
+
+
+/* Private functions prototypes */
+/*============================================================================*/
+
+
+
+/* Inline functions */
+/*============================================================================*/
+
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+
+/* Exported functions */
 
 /*void enable_PCC_PORTA(void){
 	PCC->PCCn[PCC_PORTA_INDEX]=0x40000000u;
@@ -35,4 +96,4 @@ void enable_PCC_LPIT(void){
 	PCC->PCCn[PCC_LPIT_INDEX]=0x40000000u;
 }
 
-#endif /* MAL_LIB_PCC_C_ */
+/*============================================================================*/

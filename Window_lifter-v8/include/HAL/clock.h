@@ -41,12 +41,13 @@
 /*
  * $Log: filename.h  $
   ============================================================================*/
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef HAL_CLOCK_H_
+#define HAL_CLOCK_H_
 
 /* Includes */
 /*============================================================================*/
 
+#include "MAL/lib_scg.h"
 
 /* Constants and types */
 /*============================================================================*/
@@ -58,5 +59,7 @@
 
 /* Exported functions prototypes */
 /*============================================================================*/
+
+void config_XTAL();
 
 #endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */

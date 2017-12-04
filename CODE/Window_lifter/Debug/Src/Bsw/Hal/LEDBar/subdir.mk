@@ -30,7 +30,7 @@ C_DEPS += \
 # Each subdirectory must supply rules for building sources it contributes
 Src/Bsw/Hal/LEDBar/LEDBar.o: ../Src/Bsw/Hal/LEDBar/LEDBar.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #8 $<'
+	@echo 'Executing target #9 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Src/Bsw/Hal/LEDBar/LEDBar.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "Src/Bsw/Hal/LEDBar/LEDBar.o" "$<"
 	@echo 'Finished building: $<'

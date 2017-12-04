@@ -30,7 +30,7 @@ C_DEPS += \
 # Each subdirectory must supply rules for building sources it contributes
 Src/Bsw/Mcal/Dio/Dio.o: ../Src/Bsw/Mcal/Dio/Dio.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #9 $<'
+	@echo 'Executing target #10 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Src/Bsw/Mcal/Dio/Dio.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "Src/Bsw/Mcal/Dio/Dio.o" "$<"
 	@echo 'Finished building: $<'

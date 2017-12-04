@@ -2,11 +2,13 @@
 -I"C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_C/include/arm"
 -I"C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_Runtime/include"
 -I"C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_Runtime/include/arm"
--I"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/include"
--I"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/Src/Bsw/Hal/Indicators"
--I"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/Src/Bsw/Hal/Buttons"
--I"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/Src/Bsw/APP"
--I"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/Src/Bsw/Hal/LEDBar"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/include"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Indicators"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Buttons"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/LEDBar"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/BarMovement"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/WindowMovement"
 -x assembler-with-cpp
 -O0
 -g3

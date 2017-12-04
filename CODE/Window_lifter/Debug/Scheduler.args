@@ -10,13 +10,14 @@
 "./Src/Bsw/Hal/LEDBar/LEDBar.o"
 "./Src/Bsw/Hal/Indicators/LEDs.o"
 "./Src/Bsw/Hal/Buttons/Buttons.o"
-"./Src/Bsw/APP/windowlifter.o"
+"./Src/Bsw/APP/WindowMovement/windowlifter.o"
+"./Src/Bsw/APP/BarMovement/BarCtrl.o"
 "./Src/Asw/Entry/Main.o"
 "./Project_Settings/Startup_Code/system_S32K144.o"
 "./Project_Settings/Startup_Code/startup_S32K144.o"
 "./Project_Settings/Startup_Code/startup.o"
 -T
-"C:/Users/uidn8311/Documents/Programas_de_practica/NXP_Projects/Scheduler/Project_Settings/Linker_Files/S32K1xx_flash.ld"
+"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Project_Settings/Linker_Files/S32K1xx_flash.ld"
 -Wl,-Map,"Scheduler.map"
 -Xlinker
 --gc-sections

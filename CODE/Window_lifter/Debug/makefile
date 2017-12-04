@@ -17,8 +17,8 @@ RM := rm -rf
 -include Project_Settings/Linker_Files/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include Src/Asw/Entry/subdir.mk
--include Src/Bsw/APP/BarMovement/subdir.mk
--include Src/Bsw/APP/WindowMovement/subdir.mk
+-include Src/Bsw/APP/Functionalities/subdir.mk
+-include Src/Bsw/APP/LEDBarDriver/subdir.mk
 -include Src/Bsw/Hal/Buttons/subdir.mk
 -include Src/Bsw/Hal/Indicators/subdir.mk
 -include Src/Bsw/Hal/LEDBar/subdir.mk

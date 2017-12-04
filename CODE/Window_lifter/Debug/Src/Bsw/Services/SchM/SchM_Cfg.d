@@ -15,13 +15,7 @@ Src/Bsw/Services/SchM/SchM_Cfg.o: ../Src/Bsw/Services/SchM/SchM_Cfg.c \
  C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_C/include/wchar_t.h \
  ../Src/Bsw/Services/SchM/SchM_Cfg.h \
  ../Src/Bsw/Services/SchM/SchM_Types.h \
- ../Src/Bsw/Services/SchM/SchM_Tasks.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/WindowMovement/windowlifter.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Indicators/LEDs.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Mcal/Dio/Dio.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Buttons/Buttons.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/LEDBar/LEDBar.h \
- C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Mcal/Dio/dio.h
+ ../Src/Bsw/Services/SchM/SchM_Tasks.h
 
 C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_C/include/lib_c99.prefix:
 
@@ -56,15 +50,3 @@ C:/NXP/S32DS_ARM_v2.0/S32DS/arm_ewl2/EWL_C/include/wchar_t.h:
 ../Src/Bsw/Services/SchM/SchM_Types.h:
 
 ../Src/Bsw/Services/SchM/SchM_Tasks.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/WindowMovement/windowlifter.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Indicators/LEDs.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Mcal/Dio/Dio.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Buttons/Buttons.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/LEDBar/LEDBar.h:
-
-C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Mcal/Dio/dio.h:

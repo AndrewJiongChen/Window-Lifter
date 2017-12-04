@@ -60,12 +60,12 @@
 /*============================================================================*/
 
 typedef enum{ /*Enumeraciones de las mascaras de cada task*/
-	SCHM_MASK_2MS = (T_UBYTE) 0x03u,
-	SCHM_MASK_4MS  = (T_UBYTE) 0x07u,
-	SCHM_MASK_8MS  = (T_UBYTE) 0x0Fu,
-	SCHM_MASK_16MS    = (T_UBYTE) 0x1Fu,
-	SCHM_MASK_32MS    = (T_UBYTE) 0x3Fu,
-	SCHM_MASK_64MS   = (T_UBYTE) 0x7Fu
+	SCHM_MASK_2MS = (T_UBYTE) 0x01u,
+	SCHM_MASK_4MS  = (T_UBYTE) 0x03u,
+	SCHM_MASK_8MS  = (T_UBYTE) 0x07u,
+	SCHM_MASK_16MS    = (T_UBYTE) 0x0Fu,
+	SCHM_MASK_32MS    = (T_UBYTE) 0x1Fu,
+	SCHM_MASK_64MS   = (T_UBYTE) 0x3Fu
 }SchM_TaskMaskType;
 
 typedef enum{ /*Enumeraciones del ID de las tareas a ejecutar*/

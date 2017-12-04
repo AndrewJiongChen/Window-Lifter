@@ -54,67 +54,80 @@
 /*============================================================================*/
 
 #include "SchM_Tasks.h"
-
+#include "windowFunctions.h"
 /* Constants and types */
 /*============================================================================*/
 
 
 /* Exported Variables */
 /*============================================================================*/
-T_ULONG ledTransitions=0;
+T_ULONG LEDTransitions=0;
 
-extern T_UBYTE State=0;
-extern T_UBYTE tickValidateButton=0;
-extern T_UBYTE tickLEDBarTransitions=0;
-extern T_UBYTE tickAutomaticMode=0;
-extern T_UBYTE LEDBarTransitions=10;
-extern T_UBYTE automaticMovementFlag=0;
-extern T_UBYTE antiPinchCounter=0;
-extern T_ULONG waitSecondsVariable;
+T_UBYTE State=0;
+extern T_UBYTE LEDBarCounter=10;
+
 /* Exported functions prototypes */
 /*============================================================================*/
 extern void SchM_2ms_Task(void){
-	switch (State){
+	switch(State){
 	case 1:
-		initalState();
+		State=initializeWindowLifter();
 		break;
 	case 2:
-		downwardTransitionState();
+		State=validateButtonDown();
 		break;
 	case 3:
-		windowDown();
+		State=modeFunctionalityValidationDown();
 		break;
 	case 4:
-		upwardTransitionState();
+		turnLED(green,on);
+		State=automaticDownward();
 		break;
 	case 5:
-		windowUp();
+		turnLED(green,on);
+		State=manualDownward();
 		break;
 	case 6:
-		automaticWindowDown();
+		State=transitionState();
 		break;
 	case 7:
-		automaticWindowUp();
+		State=validateButtonUp();
 		break;
 	case 8:
-		antiPinchRoutine();
+		State=modeFunctionalityValidationUp();
 		break;
 	case 9:
-		delay_s(5);
+		turnLED(blue,on);
+		State=automaticUpward();
+		break;
+	case 10:
+		turnLED(blue,on);
+		State=manualUpward();
+		break;
+	case 11:
+		State=validateAntiPinch();
+		break;
+	case 12:
+		turnLED(green,on);
+		turnLED(blue,off);
+		State=antiPinchRoutine();
+		break;
+	case 13:
+		State=delay5S();
 		break;
 	default:
-		resetSystem();
+		State=reset();
 		break;
 	}
 }
 
 
 extern void SchM_4ms_Task(void){
-	if(ledTransitions<125){
-		ledTransitions++;
+	if(LEDTransitions<250){
+		LEDTransitions++;
 	}else{
 		testLED();
-		ledTransitions=0;
+		LEDTransitions=0;
 	}
 }
 

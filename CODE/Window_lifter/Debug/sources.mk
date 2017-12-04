@@ -53,8 +53,8 @@ SUBDIRS := \
 Project_Settings/Linker_Files \
 Project_Settings/Startup_Code \
 Src/Asw/Entry \
-Src/Bsw/APP/BarMovement \
-Src/Bsw/APP/WindowMovement \
+Src/Bsw/APP/Functionalities \
+Src/Bsw/APP/LEDBarDriver \
 Src/Bsw/Hal/Buttons \
 Src/Bsw/Hal/Indicators \
 Src/Bsw/Hal/LEDBar \

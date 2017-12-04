@@ -16,8 +16,8 @@
 -I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/Buttons"
 -I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP"
 -I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/Hal/LEDBar"
--I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/BarMovement"
--I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/WindowMovement"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/Functionalities"
+-I"C:/Users/carlo/OneDrive/Documentos/Continental/Desarrollo_NXP/Scheduler/Src/Bsw/APP/LEDBarDriver"
 -O0
 -g3
 -Wall
